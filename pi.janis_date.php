@@ -1,11 +1,40 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+========================================================
+Plugin TruncHTML
+--------------------------------------------------------
+Copyright: Oliver Heine
+License: Freeware
+http://utilitees.de/ee.php/trunchtml
+--------------------------------------------------------
+This addon may be used free of charge. Should you
+employ it in a commercial project of a customer or your
+own I'd appreciate a small donation.
+========================================================
+File: pi.trunchtml.php
+--------------------------------------------------------
+Purpose: Truncates HTML to the specified length without
+leaving open tags.
+========================================================
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
+========================================================
+*/
+
 
 $plugin_info = array(  'pi_name' => 'Janis Date',
     'pi_version' => '1.0',
     'pi_author' => 'Janis Gonser',
-    'pi_author_url' => 'http://',
+    'pi_author_url' => '',
     'pi_description' => 'Custom plugin that compares 2 dates',
-    'pi_usage' => janis_date::usage());
+    'pi_usage' => trunchtml::usage());
 
 class Janis_Date
 {
@@ -49,10 +78,10 @@ class Janis_Date
 Example:
 ----------------
 {exp:janis_date date="{subscription_expired}"}
-    {if '{is_expired}' == 'true'}
-        YEAH I'm expired.
+    {if '{is_expired}'' == 'true'}
+        YEAH
     {if:else}
-        NOOO, it's still good!
+        NOOO
     {/if}
 {/exp:janis_date}
 
