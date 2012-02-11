@@ -17,15 +17,15 @@ class Janis_Date
 
         $date = $this->EE->TMPL->fetch_param('date','');
 
-        if (empty($date))
-            return $this->return_data = $this->EE->TMPL->tagdata;
-        
         $expired = true;
 
-        // yyyy-mm-dd
-        if (strtotime($date) > strtotime('now'))
-            $expired = false;
-
+        if (!empty($date))
+        {
+            // yyyy-mm-dd
+            if (strtotime($date) > strtotime('now'))
+                $expired = false;
+        }
+        
         // update tags and return 
         $variables[] = array(
             'is_expired'       => ($expired ? 'true' : 'false')
@@ -50,9 +50,9 @@ Example:
 ----------------
 {exp:janis_date date="{subscription_expired}"}
     {if '{is_expired}' == 'true'}
-        YEAH I'm expired.
+        I'm expired.
     {if:else}
-        NOOO, it's still good!
+        I'm NOT expired.
     {/if}
 {/exp:janis_date}
 
